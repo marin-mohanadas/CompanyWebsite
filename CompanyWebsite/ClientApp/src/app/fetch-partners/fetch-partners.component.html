@@ -1,0 +1,20 @@
+<h1 id="tableLabel">Patrners</h1>
+
+<p *ngIf="!partners"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="partners">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Biography</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let partner of partners">
+      <td>{{ partner.id }}</td>
+      <td>{{ partner.name }}</td>
+      <td>{{ partner.biography }}</td>
+    </tr>
+  </tbody>
+</table>
