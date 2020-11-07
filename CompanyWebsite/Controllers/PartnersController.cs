@@ -15,15 +15,6 @@ namespace CompanyWebsite.Controllers
     [Route("[controller]")]
     public class PartnersController : ControllerBase
     {
-
-        private readonly ILogger<PartnersController> _logger;
-
-        public PartnersController(ILogger<PartnersController> logger)
-        {
-            _logger = logger;
-        }
-
-
         [HttpGet]
         [AllowAnonymous]
         public ActionResult<IEnumerable<Partners>> GetPartners()
@@ -32,7 +23,6 @@ namespace CompanyWebsite.Controllers
             return partners.PartnersLists();
         }
 
-        [Authorize]
         [HttpGet("{id}")]
         public ActionResult<IEnumerable<Partners>> GetPartner(int id)
         {
@@ -61,13 +51,37 @@ public class Partners
                 {
                     Id = 1,
                     Name = "Jane Doe",
-                    Biography = "This is a test Biography for Ms.Doe"
+                    Biography = "This is a test Biography about Ms.Doe"
                 },
                 new Partners
                 {
                      Id = 2,
                     Name = "John Smith",
-                    Biography = "This is a test Biography for Mr.Smith"
+                    Biography = "This is a test Biography about Mr.Smith"
+                },
+                new Partners
+                {
+                    Id = 3,
+                    Name = "Mike Scott",
+                    Biography = "This is a test Biography about Mr.Scott"
+                },
+                new Partners
+                {
+                    Id = 4,
+                    Name = "Mary Kaitch",
+                    Biography = "This is a test Biography about Ms.Kaitch"
+                },
+                new Partners
+                {
+                    Id = 5,
+                    Name = "Joe Stanley",
+                    Biography = "This is a test Biography about Mr.Stanley"
+                },
+                new Partners
+                {
+                    Id = 6,
+                    Name = "Steve Robert",
+                    Biography = "This is a test Biography about Mr.Robert"
                 }
 
             };

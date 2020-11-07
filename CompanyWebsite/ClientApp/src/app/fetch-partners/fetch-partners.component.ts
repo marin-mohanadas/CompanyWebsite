@@ -1,5 +1,6 @@
-import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { PartnerService } from '../_services/partner.service';
+
 
 @Component({
   selector: 'app-partners',
@@ -7,22 +8,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./fetch-partners.component.css']
 })
 
-export class PartnersComponent {
-  public partners: Partners;
+export class PartnersComponent implements OnInit {
+  //partners = [];
+  partners;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Partners>(baseUrl + 'partners').subscribe(result => {
-      this.partners = result;
-    }, error => console.error(error));
+  constructor(private partnerService: PartnerService) { }
+
+  ngOnInit() {
+    //this.partnerService.getAllPartners()
+    //  .subscribe((data: any[]) => {
+    //    console.log(data);
+    //    this.partners = data;
+    //  })
+
+    this.partners = this.partnerService.getAllPartners();
   }
+
+
 }
-
-interface Partners {
-  id: number;
-  name: string;
-  biography: string;
-}
-
-
-
-

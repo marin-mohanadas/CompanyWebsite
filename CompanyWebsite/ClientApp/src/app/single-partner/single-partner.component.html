@@ -1,7 +1,7 @@
 <div class="containerPartner">
   <!-- Three columns of text below the carousel -->
   <div class="row">
-    <div class="col-lg-4" *ngFor="let partner of partners | async">
+    <div class="col-lg-12" *ngFor="let partner of singlePartner">
       <svg class="bd-placeholder-img rounded-circle" width="240" height="240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
         <title>{{ partner.name }}</title>
         <rect width="100%" height="100%" fill="#777"></rect>
@@ -12,8 +12,7 @@
         {{ partner.biography }}
       </p>
       <p>
-        <!--<a class="btn btn-secondary" [routerLink]="['/singlepartner']">View details »</a>-->
-        <a class="btn btn-secondary" [routerLink]="['/bio', partner.id]">View details »</a>
+        <a class="btn btn-secondary" [routerLink]="['/bio']">Back to Partners</a>
       </p>
     </div><!-- /.col-lg-4 -->
   </div>
