@@ -13,8 +13,9 @@ export class PartnerService {
     return this.httpClient.get(this.apiUrl);
   }
 
-  public getSinglePartner(id: string) {
+  public getSinglePartner(id: number) {
     var paramUrl = this.apiUrl + id;
+    console.log(paramUrl);
     return this.httpClient.get(paramUrl);
   }
 

@@ -17,7 +17,7 @@ export class SinglePartnerComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const id = params['name'];
+      const id = params['id'];
       this.partnerService
         .getSinglePartner(id)
         .subscribe(data => this.singlePartner = data);
