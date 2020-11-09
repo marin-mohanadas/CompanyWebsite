@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PartnerService } from '../_services/partner.service';
 import { ActivatedRoute } from '@angular/router';
+import { PartnerModel } from '../_models/partnersModel';
 
 @Component({
   selector: 'app-single-partner',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./single-partner.component.css']
 })
 export class SinglePartnerComponent implements OnInit {
-  singlePartner;
+  partner: PartnerModel;
 
   constructor(
     private partnerService: PartnerService,
@@ -16,11 +17,15 @@ export class SinglePartnerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      const id = params['id'];
-      this.partnerService
-        .getSinglePartner(id)
-        .subscribe(data => this.singlePartner = data);
+    this.loadPartner();
+  }
+
+  loadPartner() {
+    this.partnerService.getSinglePartner(
+      this.route.snapshot.paramMap.get('userName')
+    ).subscribe(partner => {
+      this.partner = partner;
     });
   }
+
 }

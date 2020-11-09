@@ -1,22 +1,21 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-
-
+import { Injectable, Inject } from '@angular/core';
+import { PartnerModel } from '../_models/partnersModel';
 
 @Injectable()
 export class PartnerService {
-  private apiUrl: string = 'https://localhost:5001/partners/';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    @Inject('BASE_URL') private baseUrl: string
+  ) { }
 
   public getAllPartners() {
-    return this.httpClient.get(this.apiUrl);
+    return this.httpClient.get<PartnerModel[]>(`${this.baseUrl}partners`);
   }
 
-  public getSinglePartner(id: number) {
-    var paramUrl = this.apiUrl + id;
-    console.log(paramUrl);
-    return this.httpClient.get(paramUrl);
+  public getSinglePartner(username: string) {
+    return this.httpClient.get<PartnerModel>(`${this.baseUrl}partners/${username}`);
   }
 
 }

@@ -2,7 +2,7 @@
   <a class="btn btn-outline-secondary" [routerLink]="['/bio']">« Partners</a>
 </div>
 <br />
-<div class="row featurette" *ngFor="let partner of singlePartner">
+<div class="row featurette" *ngIf="partner">
   <div class="col-md-7">
     <h2 class="featurette-heading">{{ partner.name }}</h2>
     <p class="lead">{{ partner.biography }}</p>

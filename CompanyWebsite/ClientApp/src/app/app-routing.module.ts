@@ -21,7 +21,7 @@ const routes: Routes = [
     component: PartnersComponent
   },
   {
-    path: 'bio/:id',
+    path: 'bio/:userName',
     component: SinglePartnerComponent
   }
 

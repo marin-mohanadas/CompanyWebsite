@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CompanyWebsite.Entities
+namespace CompanyWebsite.Model.DTOs
 {
-    public class Partners
+    public class UserDTO
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Biography { get; set; }
-        public string UserName { get; internal set; }
     }
 }

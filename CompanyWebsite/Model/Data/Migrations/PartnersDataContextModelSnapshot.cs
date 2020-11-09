@@ -27,6 +27,9 @@ namespace CompanyWebsite.Model.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("Partners");
