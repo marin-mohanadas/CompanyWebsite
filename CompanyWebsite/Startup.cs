@@ -1,3 +1,5 @@
+using AutoMapper;
+using CompanyWebsite.Helpers;
 using CompanyWebsite.Interfaces;
 using CompanyWebsite.Model;
 using CompanyWebsite.Model.Data;
@@ -24,6 +26,9 @@ namespace CompanyWebsite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IPartnersRepository, PartnersRepository>();
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
+
+
             services.AddDbContext<PartnersDataContext>(options =>
             {
                 options.UseSqlite(_config.GetConnectionString("DefaultConnection"));

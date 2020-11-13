@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using CompanyWebsite.Entities;
 using CompanyWebsite.Interfaces;
 using CompanyWebsite.Model.DTOs;
@@ -16,23 +17,28 @@ namespace CompanyWebsite.Controllers
     public class PartnersController : ControllerBase
     {
         private readonly IPartnersRepository _partnersRepository;
+        private readonly IMapper _mapper;
 
-        public PartnersController(IPartnersRepository partnersRepository)
+        public PartnersController(IPartnersRepository partnersRepository, IMapper mapper)
         {
             _partnersRepository = partnersRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult<IEnumerable<Partners>>> GetPartners()
+        public async Task<ActionResult<IEnumerable<UserDTO>>> GetPartners()
         {
-            return Ok(await _partnersRepository.GetPartnersAsync());
+            var partners = await _partnersRepository.GetPartnersAsync();
+            var partnersToReturn = _mapper.Map<IEnumerable<UserDTO>>(partners);
+            return Ok(partnersToReturn);
         }
 
         [HttpGet("{username}")]
-        public async Task<ActionResult<Partners>> GetPartner(string username)
+        public async Task<ActionResult<UserDTO>> GetPartner(string username)
         {
-            return await _partnersRepository.GetPartnersByUserNameAsync(username);
+            var partner = await _partnersRepository.GetPartnersByUserNameAsync(username);
+            return _mapper.Map<UserDTO>(partner);
         }
 
         [HttpPost("register")]

@@ -21,7 +21,9 @@ namespace CompanyWebsite.Model
 
         public async Task<IEnumerable<Partners>> GetPartnersAsync()
         {
-            return await _context.Partners.ToListAsync();
+            return await _context.Partners
+                .Include(p => p.Photos)
+                .ToListAsync();
         }
 
         public async Task<Partners> GetPartnersByIdAsync(int id)
@@ -31,7 +33,9 @@ namespace CompanyWebsite.Model
 
         public async Task<Partners> GetPartnersByUserNameAsync(string userName)
         {
-            return await _context.Partners.SingleOrDefaultAsync(x => x.UserName == userName);
+            return await _context.Partners
+                .Include(p => p.Photos)
+                .SingleOrDefaultAsync(x => x.UserName == userName);
         }
 
         public async Task<bool> SaveAllAsync()

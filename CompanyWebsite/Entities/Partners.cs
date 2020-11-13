@@ -11,5 +11,7 @@ namespace CompanyWebsite.Entities
         public string Name { get; set; }
         public string Biography { get; set; }
         public string UserName { get; internal set; }
+
+        public ICollection<Photo> Photos { get; set; }
     }
 }

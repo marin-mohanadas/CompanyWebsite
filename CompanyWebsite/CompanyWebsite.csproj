@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8">
@@ -32,6 +33,15 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\_models\partnersModel.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\partners\jane_doe.jpg" />
+    <None Include="wwwroot\images\partners\Joe_Stanley.jpg" />
+    <None Include="wwwroot\images\partners\John_Smith.jpg" />
+    <None Include="wwwroot\images\partners\mary_kaitch.jpg" />
+    <None Include="wwwroot\images\partners\Mike_Scott.jpg" />
+    <None Include="wwwroot\images\partners\Steve_Roberts.jpg" />
   </ItemGroup>
 
   <ItemGroup>
