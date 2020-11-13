@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CompanyWebsite.Model.Data.Migrations
 {
     [DbContext(typeof(PartnersDataContext))]
-    [Migration("20201112221058_InitialCreate")]
+    [Migration("20201113043439_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,9 +45,6 @@ namespace CompanyWebsite.Model.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("IsMain")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("PartnerId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("PartnersId")

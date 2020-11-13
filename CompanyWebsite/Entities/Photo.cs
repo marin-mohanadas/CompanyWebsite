@@ -11,6 +11,5 @@ namespace CompanyWebsite.Entities
         public string PublicId { get; set; }
 
         public Partners Partners { get; set; }
-        public int PartnerId { get; set; }
     }
 }

@@ -30,8 +30,7 @@ namespace CompanyWebsite.Model.Data.Migrations
                     Url = table.Column<string>(nullable: true),
                     IsMain = table.Column<bool>(nullable: false),
                     PublicId = table.Column<string>(nullable: true),
-                    PartnersId = table.Column<int>(nullable: true),
-                    PartnerId = table.Column<int>(nullable: false)
+                    PartnersId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,7 +40,7 @@ namespace CompanyWebsite.Model.Data.Migrations
                         column: x => x.PartnersId,
                         principalTable: "Partners",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

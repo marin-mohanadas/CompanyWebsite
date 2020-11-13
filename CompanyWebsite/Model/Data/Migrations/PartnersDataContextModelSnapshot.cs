@@ -45,10 +45,7 @@ namespace CompanyWebsite.Model.Data.Migrations
                     b.Property<bool>("IsMain")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("PartnerId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("PartnersId")
+                    b.Property<int>("PartnersId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PublicId")
