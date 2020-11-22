@@ -11,13 +11,17 @@ import { FooterComponent } from './footer/footer.component';
 
 import { HomeComponent } from './home/home.component';
 import { PartnersComponent } from './fetch-partners/fetch-partners.component';
+
 import { ServicesComponent } from './services/services.component';
 import { SinglePartnerComponent } from './single-partner/single-partner.component';
 
+import { NewsComponent } from './news/news.component';
+import { FetchThisNewsComponent } from './fetch-this-news/fetch-this-news.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PartnerService } from './_services/partner.service';
+import { NewsService } from './_services/news.service';
 
 
 
@@ -29,7 +33,9 @@ import { PartnerService } from './_services/partner.service';
     HomeComponent,
     ServicesComponent,
     PartnersComponent,
-    SinglePartnerComponent
+    SinglePartnerComponent,
+    NewsComponent,
+    FetchThisNewsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,7 +44,12 @@ import { PartnerService } from './_services/partner.service';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [PartnerService],
-  bootstrap: [AppComponent]
+  providers: [
+    PartnerService,
+    NewsService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

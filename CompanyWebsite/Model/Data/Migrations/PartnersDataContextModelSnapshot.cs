@@ -16,6 +16,26 @@ namespace CompanyWebsite.Model.Data.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.8");
 
+            modelBuilder.Entity("CompanyWebsite.Entities.News", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DatePosted")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Heading")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("News");
+                });
+
             modelBuilder.Entity("CompanyWebsite.Entities.Partners", b =>
                 {
                     b.Property<int>("Id")
@@ -45,7 +65,7 @@ namespace CompanyWebsite.Model.Data.Migrations
                     b.Property<bool>("IsMain")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("PartnersId")
+                    b.Property<int?>("PartnersId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PublicId")

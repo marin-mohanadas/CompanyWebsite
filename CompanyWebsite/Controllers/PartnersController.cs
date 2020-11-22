@@ -12,9 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyWebsite.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class PartnersController : ControllerBase
+    public class PartnersController : BaseController
     {
         private readonly IPartnersRepository _partnersRepository;
         private readonly IMapper _mapper;

@@ -11,11 +11,11 @@ export class PartnerService {
   ) { }
 
   public getAllPartners() {
-    return this.httpClient.get<PartnerModel[]>(`${this.baseUrl}partners`);
+    return this.httpClient.get<PartnerModel[]>(`${this.baseUrl}api/partners`);
   }
 
   public getSinglePartner(username: string) {
-    return this.httpClient.get<PartnerModel>(`${this.baseUrl}partners/${username}`);
+    return this.httpClient.get<PartnerModel>(`${this.baseUrl}api/partners/${username}`);
   }
 
 }

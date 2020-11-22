@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\_models\newsModel.ts" />
     <None Remove="ClientApp\src\app\_models\partnersModel.ts" />
   </ItemGroup>
 
@@ -45,6 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\_models\newsModel.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\_models\partnersModel.ts" />
   </ItemGroup>
 

@@ -14,5 +14,6 @@ namespace CompanyWebsite.Model.Data
         }
 
         public DbSet<Partners> Partners { get; set; }
+        public DbSet<News> News { get; set; }
     }
 }
